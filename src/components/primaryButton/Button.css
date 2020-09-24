@@ -1,0 +1,36 @@
+:root {
+  --colorPrimary: burlywood;
+}
+
+.button{
+    padding: 8px 20px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.button--primary{
+    background-color: var(--colorPrimary);
+}
+
+.button--outline{
+    background-color: transparent;
+    color: white;
+    border: 1px solid var(--colorPrimary);
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-out;
+}
+
+.button--medium{
+    padding: 8px 20px;
+    color: white;
+    font-size: 18px;
+}
+
+.button--large{
+    padding: 12px 24px;
+    color: white;
+    font-size: 20px;
+}
