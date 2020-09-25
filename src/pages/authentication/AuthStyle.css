@@ -1,0 +1,50 @@
+.auth__container {
+  margin-top: 10%;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  color: aliceblue;
+}
+
+.auth__row {
+  border: 2px solid springgreen;
+  height: fit-content;
+  margin: 8px 20px 8px 20px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s linear;
+}
+
+.auth__formContainer {
+  width: 300px;
+  display: table;
+  margin: 0 auto;
+}
+
+.text__input {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  margin: 8px 0 8px 0;
+  background-color: rgb(234, 239, 243);
+}
+
+.button__submit{
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 8px 20px;
+}
+
+@media screen and (max-width: 568px) {
+  .auth__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .auth__formContainer {
+    width: 90%;
+    display: table;
+    margin: 0 auto;
+  }
+}

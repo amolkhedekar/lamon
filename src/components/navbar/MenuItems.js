@@ -2,7 +2,7 @@ export let menuItems = [
   {
     title: "Home",
     url: "#",
-    class: "header__link active",
+    class: "header__link",
   },
   {
     title: "Contact",
@@ -27,7 +27,7 @@ export let menuItems = [
   {
     title: "Login",
     url: "#",
-    class: "header__link",
+    class: "header__link active",
   },
 ];
 
