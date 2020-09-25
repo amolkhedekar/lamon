@@ -6,9 +6,10 @@
 }
 
 body {
-  /* background-color: rgb(236, 237, 237); */
+  background-color: rgb(236, 237, 237);
 }
 
 .app__home {
+  height: 100vh;
   background-image: linear-gradient(180deg, #2f2e41 33.35%, #181729 100%);
 }

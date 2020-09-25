@@ -79,6 +79,7 @@
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
+    height: 90vh;
   }
 
   .header__link {
@@ -86,6 +87,7 @@
     padding: 0.5rem;
     width: 100%;
     display: table;
+    margin:5% 0 0 0;
   }
 
   .header__link:hover {
