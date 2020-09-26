@@ -15,43 +15,55 @@ class Navbar extends Component {
   };
   render() {
     return (
-      <nav className="header">
-        <img
-          className="header__logo"
-          src={Logo}
-          width="50"
-          height="50"
-          alt="Logo"
-        />
-        <div className="header__menuIcon" onClick={this.menuClickHandler}>
-          <i
+      <div>
+        <nav className="header">
+          <img
+            className="header__logo"
+            src={Logo}
+            width="50"
+            height="50"
+            alt="Logo"
+          />
+          <div className="header__menuIcon" onClick={this.menuClickHandler}>
+            <i
+              className={
+                this.state.clicked ? "fa fa-times fa-2x" : "fa fa-bars fa-2x"
+              }
+            ></i>
+          </div>
+          <ul
             className={
-              this.state.clicked ? "fa fa-times fa-2x" : "fa fa-bars fa-2x"
+              this.state.clicked ? "header__menu active" : "header__menu"
             }
-          ></i>
+          >
+            {menuItems.map((item, index) => {
+              return (
+                <li key={index}>
+                  <a className={item.class} href={item.url}>
+                    {item.title}
+                  </a>
+                </li>
+              );
+            })}
+            <li>
+              <a className="header__link" href="#">
+                <i className="fa fa-shopping-cart header__cartIcon"></i>
+                <span className="header__cartCount">0</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div className="header__search">
+          <input
+            type="text"
+            placeholder="Search"
+            className="header__searchInput"
+          />
+          <button className="header__searchButton">
+            <i className="fa fa-search"></i>
+          </button>
         </div>
-        <ul
-          className={
-            this.state.clicked ? "header__menu active" : "header__menu"
-          }
-        >
-          {menuItems.map((item, index) => {
-            return (
-              <li key={index}>
-                <a className={item.class} href={item.url}>
-                  {item.title}
-                </a>
-              </li>
-            );
-          })}
-          <li>
-            <a className="header__link" href="#">
-              <i className="fa fa-shopping-cart header__cartIcon"></i>
-              <span className="header__cartCount">0</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      </div>
     );
   }
 }
