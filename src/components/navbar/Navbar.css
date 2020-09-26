@@ -48,7 +48,6 @@
   color: black;
 }
 
-
 .header__link:hover {
   background-color: rgb(140, 218, 218);
   border-radius: 5px;
@@ -87,7 +86,7 @@
     padding: 0.5rem;
     width: 100%;
     display: table;
-    margin:5% 0 0 0;
+    margin: 5% 0 0 0;
   }
 
   .header__link:hover {

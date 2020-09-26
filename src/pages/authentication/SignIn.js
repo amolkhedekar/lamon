@@ -7,14 +7,10 @@ function SignIn() {
     <div className="auth">
       <div className="auth__container">
         <div className="auth__row">
-          <img
-            className="auth__image"
-            src={AuthImage}
-            alt="personimage"
-          />
+          <img className="auth__image" src={AuthImage} alt="personimage" />
           <div className="auth__formContainer">
             <h1 className="auth__title">Login to continue</h1>
-            <form method="POST" action="">
+            <form  className="auth__form">
               <div className="div__textInput">
                 <input
                   type="email"

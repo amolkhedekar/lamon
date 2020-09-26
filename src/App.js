@@ -11,7 +11,7 @@ function App() {
     <div className="app">
       <div className="app__home">
         <Navbar />
-        <SignIn />
+        <Home/>
       </div>
     </div>
   );
