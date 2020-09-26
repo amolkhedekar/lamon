@@ -1,9 +1,7 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { menuItems } from "./MenuItems";
 import Logo from "../../static/images/logo.svg";
-import SearchIcon from "@material-ui/icons/Search";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
-
 import "./Navbar.css";
 
 class Navbar extends Component {
@@ -15,15 +13,17 @@ class Navbar extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="header__div">
         <nav className="header">
-          <img
-            className="header__logo"
-            src={Logo}
-            width="50"
-            height="50"
-            alt="Logo"
-          />
+          <Link to="/">
+            <img
+              className="header__logo"
+              src={Logo}
+              width="50"
+              height="50"
+              alt="Logo"
+            />
+          </Link>
           <div className="header__menuIcon" onClick={this.menuClickHandler}>
             <i
               className={
@@ -39,30 +39,21 @@ class Navbar extends Component {
             {menuItems.map((item, index) => {
               return (
                 <li key={index}>
-                  <a className={item.class} href={item.url}>
+                  <Link className={item.class} to={item.url}>
                     {item.title}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
             <li>
-              <a className="header__link" href="#">
+              <Link className="header__link" to="/cart">
                 <i className="fa fa-shopping-cart header__cartIcon"></i>
                 <span className="header__cartCount">0</span>
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
-        <div className="header__search">
-          <input
-            type="text"
-            placeholder="Search"
-            className="header__searchInput"
-          />
-          <button className="header__searchButton">
-            <i className="fa fa-search"></i>
-          </button>
-        </div>
+        
       </div>
     );
   }
