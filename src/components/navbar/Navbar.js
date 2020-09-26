@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { menuItems } from "./MenuItems";
 import Logo from "../../static/images/logo.svg";
+import SearchIcon from "@material-ui/icons/Search";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+
 import "./Navbar.css";
 
 class Navbar extends Component {
@@ -41,6 +44,12 @@ class Navbar extends Component {
               </li>
             );
           })}
+          <li>
+            <a className="header__link" href="#">
+              <i className="fa fa-shopping-cart header__cartIcon"></i>
+              <span className="header__cartCount">0</span>
+            </a>
+          </li>
         </ul>
       </nav>
     );

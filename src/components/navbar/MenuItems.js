@@ -2,7 +2,7 @@ export let menuItems = [
   {
     title: "Home",
     url: "#",
-    class: "header__link",
+    class: "header__link active",
   },
   {
     title: "Contact",
@@ -15,19 +15,14 @@ export let menuItems = [
     class: "header__link",
   },
   {
+    title: "Login",
+    url: "#",
+    class: "header__link",
+  },
+  {
     title: "Orders",
     url: "#",
     class: "header__link",
-  },
-  {
-    title: "Cart",
-    url: "#",
-    class: "header__link",
-  },
-  {
-    title: "Login",
-    url: "#",
-    class: "header__link active",
   },
 ];
 

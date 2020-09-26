@@ -1,4 +1,5 @@
 import React from "react";
+import Product from "../product/Product";
 import "./Home.css";
 
 function Home() {
@@ -7,12 +8,11 @@ function Home() {
       <span className="home__title">Welcome to Lamon</span>
       <p className="home__description">Shop with freedom as your swings.</p>
       <div className="home__container">
-        <div className="home__row">1</div>
-        <div className="home__row">2</div>
-        <div className="home__row">3</div>
-        <div className="home__row">4</div>
-        <div className="home__row">5</div>
-        <div className="home__row">6</div>
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
       </div>
     </div>
   );
