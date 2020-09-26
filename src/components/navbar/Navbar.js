@@ -11,6 +11,7 @@ class Navbar extends Component {
       clicked: !this.state.clicked,
     });
   };
+
   render() {
     return (
       <div className="header__div">
@@ -36,9 +37,9 @@ class Navbar extends Component {
               this.state.clicked ? "header__menu active" : "header__menu"
             }
           >
-            {menuItems.map((item, index) => {
+            {menuItems.map((item) => {
               return (
-                <li key={index}>
+                <li key={item.id} onClick={this.state.clicked}>
                   <Link className={item.class} to={item.url}>
                     {item.title}
                   </Link>
@@ -53,7 +54,6 @@ class Navbar extends Component {
             </li>
           </ul>
         </nav>
-        
       </div>
     );
   }

@@ -88,6 +88,21 @@ input[type="password"]:focus {
 .button__submit:active {
   transform: scale(0.9);
 }
+.auth__signupDiv {
+  margin: 5% 0 5% 0;
+}
+
+.auth__complementaryLink {
+  margin-left: 5%;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s linear;
+}
+.auth__complementaryLink:hover {
+  background-color: transparent;
+  color: blue;
+  cursor: pointer;
+}
 /* 
 @media screen and (max-width: 568px) {
   .auth__container {

@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import "./AuthStyle.css";
 import AuthImage from "../../static/images/authimage.svg";
+import { auth } from "../../firebase/firebaseConfig";
 
 function SignIn() {
+  const history = useHistory();
+  const [email, handleEmailChange] = useState("");
+  const [password, handlePasswordChange] = useState("");
+
+  const handleSingin = (e) => {
+    e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((user) => {
+        if (user) {
+          history.push("/");
+        }
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
   return (
     <div className="auth">
       <div className="auth__container">
@@ -10,10 +29,12 @@ function SignIn() {
           <img className="auth__image" src={AuthImage} alt="personimage" />
           <div className="auth__formContainer">
             <h1 className="auth__title">Login to continue</h1>
-            <form  className="auth__form">
+            <form className="auth__form">
               <div className="div__textInput">
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => handleEmailChange(e.target.value)}
                   placeholder="Email"
                   className="text__input"
                   name="text__email"
@@ -22,13 +43,27 @@ function SignIn() {
               <div className="div__textInput">
                 <input
                   type="password"
+                  value={password}
+                  onChange={(e) => handlePasswordChange(e.target.value)}
                   placeholder="Password"
                   className="text__input"
                   name="text__password"
                 />
               </div>
-              <input type="submit" className="button__submit" value="Login" />
+              <button
+                type="submit"
+                className="button__submit"
+                onClick={handleSingin}
+              >
+                Login
+              </button>
             </form>
+            <div className="auth__signupDiv">
+              <small>Not a member?</small>
+              <Link to="/signup" className="auth__complementaryLink">
+                <strong>Signup here</strong>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
