@@ -6,9 +6,9 @@ import { auth } from "../../firebase/firebaseConfig";
 
 function SignUp() {
   const history = useHistory();
-  const [email, handleEmailChange] = useState("");
-  const [password, handlePasswordChange] = useState("");
-  const [confrimPassword, handleConfirmPasswordChange] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confrimPassword, setConfirmPassword] = useState("");
   const handleSignup = (e) => {
     e.preventDefault();
     if (password === confrimPassword) {
@@ -38,7 +38,7 @@ function SignUp() {
                 <input
                   type="email"
                   value={email}
-                  onChange={(e) => handleEmailChange(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email"
                   className="text__input"
                   name="text__email"
@@ -48,7 +48,7 @@ function SignUp() {
                 <input
                   type="password"
                   value={password}
-                  onChange={(e) => handlePasswordChange(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
                   className="text__input"
                   name="text__password"
@@ -58,7 +58,7 @@ function SignUp() {
                 <input
                   type="password"
                   value={confrimPassword}
-                  onChange={(e) => handleConfirmPasswordChange(e.target.value)}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Confirm Password"
                   className="text__input"
                   name="text__confirmPassword"

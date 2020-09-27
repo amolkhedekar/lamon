@@ -6,8 +6,8 @@ import { auth } from "../../firebase/firebaseConfig";
 
 function SignIn() {
   const history = useHistory();
-  const [email, handleEmailChange] = useState("");
-  const [password, handlePasswordChange] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSingin = (e) => {
     e.preventDefault();
@@ -34,7 +34,7 @@ function SignIn() {
                 <input
                   type="email"
                   value={email}
-                  onChange={(e) => handleEmailChange(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email"
                   className="text__input"
                   name="text__email"
@@ -44,7 +44,7 @@ function SignIn() {
                 <input
                   type="password"
                   value={password}
-                  onChange={(e) => handlePasswordChange(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
                   className="text__input"
                   name="text__password"
