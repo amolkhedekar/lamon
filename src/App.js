@@ -1,21 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import "./static/fonts/monteserrat.css";
-import Router from "./router/router";
-import { auth } from "./firebase/firebaseConfig";
-
+import Application from "./components/Application";
+import { initialState, reducer } from "./stateProviders/reducer";
+import { StateProvider } from "./stateProviders/StateProvider";
 
 function App() {
-  useEffect(() => {
-    auth.onAuthStateChanged((loggedUser) => {
-      if (loggedUser) {
-        console.log("THE USER IS >>> ", loggedUser.email);
-      } else {
-      }
-    });
-  }, []);
-
-  return <Router />;
+  return (
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <Application />
+    </StateProvider>
+  );
 }
 
 export default App;
