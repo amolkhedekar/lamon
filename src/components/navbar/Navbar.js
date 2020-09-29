@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { menuItems } from "./MenuItems";
 import Logo from "../../static/images/logo.svg";
 import "./Navbar.css";
 import { StateContext } from "../../stateProviders/StateProvider";

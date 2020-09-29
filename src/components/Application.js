@@ -35,7 +35,6 @@ function Application() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <SearchInput />
             <Home />
           </Route>
           <Route path="/products">
