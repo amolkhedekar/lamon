@@ -1,9 +1,10 @@
 .card {
-  flex: 0 1 calc(25% - 1em);
-  margin: 1.5%;
+  flex: 0 1 23%;
+  margin: 1%;
   background-color: white;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   transition: all 0.3s linear;
+  max-height: 600px;
 }
 
 .card:hover {
@@ -24,6 +25,7 @@
 
 .product__title {
   margin: 5% 5% 5% 5%;
+  height: 70px;
 }
 
 .product__currency {
@@ -32,6 +34,10 @@
 
 .product__price {
   margin: 5% 0 5% 2%;
+}
+
+.product__rating {
+  color: rgb(5, 5, 78);
 }
 
 .product__rating,
