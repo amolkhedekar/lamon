@@ -1,10 +1,10 @@
 .card {
-  flex: 0 1 23%;
-  margin: 1%;
+  flex: 0 1 25%;
+  margin: 1.5%;
   background-color: white;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   transition: all 0.3s linear;
-  max-height: 600px;
+  height: 400px;
 }
 
 .card:hover {
@@ -14,18 +14,19 @@
 }
 
 .product__image {
-  max-height: 200px;
+  max-height: 150px;
   min-width: 100px;
   display: table;
   margin: 0 auto;
   object-fit: contain;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .product__title {
   margin: 5% 5% 5% 5%;
-  height: 70px;
+  height: 50px;
+  font-size: 15px;
 }
 
 .product__currency {
@@ -35,9 +36,15 @@
 .product__price {
   margin: 5% 0 5% 2%;
 }
+.produdct__div__brand__rating{
+  display: flex;
+  justify-content: space-between;
+  
+}
 
 .product__rating {
   color: rgb(5, 5, 78);
+  align-content: flex-end;
 }
 
 .product__rating,
@@ -53,8 +60,7 @@
   border: 1px solid #ffaa22;
   display: table;
   margin: 0 auto;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 8px;
   width: fit-content;
   transition: all 0.3s linear;
   font-weight: 600;
@@ -83,7 +89,8 @@
   }
 
   .card {
-    flex: 0 1 auto;
+    flex: 0 1 0;
+    min-width: 90%;
     margin: 5%;
     background-color: white;
     padding: 1%;

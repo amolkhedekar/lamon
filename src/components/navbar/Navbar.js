@@ -13,7 +13,7 @@ class Navbar extends Component {
     });
   };
   static contextType = StateContext;
-
+  
   render() {
     const [{ user }, dispatch] = this.context;
     const signout = () => {
@@ -21,6 +21,7 @@ class Navbar extends Component {
         auth.signOut();
       }
     };
+    const authState = !user && "/signin";
     return (
       <div className="header__div">
         <nav className="header">
@@ -46,7 +47,7 @@ class Navbar extends Component {
             }
           >
             <li onClick={signout}>
-              <Link className="header__link" to={!user && "/signin"}>
+              <Link className="header__link" to={authState}>
                 {user ? "Sign Out" : "Sign in"}
               </Link>
             </li>

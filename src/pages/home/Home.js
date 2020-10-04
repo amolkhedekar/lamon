@@ -3,6 +3,7 @@ import Product from "../../components/product/Product";
 import "./Home.css";
 import productMethods from "../../database/products";
 import Loading from "../../components/loading/Loading";
+import { truncate } from "../../helpers/utils";
 
 function Home() {
   const [products, setProducts] = useState(null);
@@ -23,7 +24,6 @@ function Home() {
             image: data.image,
           });
         });
-        console.log(allProducts);
         setProducts(allProducts);
       },
       (err) => {
@@ -33,7 +33,7 @@ function Home() {
   };
   useEffect(() => {
     getAllProducts();
-  }, [products]);
+  }, []);
 
   let productsToDisplay;
   if (products === null) {
@@ -41,11 +41,12 @@ function Home() {
   } else if (products.length === 0) {
     productsToDisplay = <h1>No Products found</h1>;
   } else {
-    productsToDisplay = products.map((item) => {
+    productsToDisplay = products.map((item, index) => {
       return (
         <Product
+          key={index}
           id={item.id}
-          title={item.title}
+          title={truncate(item.title, 90)}
           price={item.price}
           rating={item.rating}
           brand={item.brand}
