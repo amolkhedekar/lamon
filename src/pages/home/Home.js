@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Product from "../product/Product";
+import Product from "../../components/product/Product";
 import "./Home.css";
 import productMethods from "../../database/products";
-import Products from "../../pages/products/Products";
-import Loading from "../loading/Loading";
+import Loading from "../../components/loading/Loading";
 
 function Home() {
   const [products, setProducts] = useState(null);
@@ -34,7 +33,7 @@ function Home() {
   };
   useEffect(() => {
     getAllProducts();
-  }, []);
+  }, [products]);
 
   let productsToDisplay;
   if (products === null) {

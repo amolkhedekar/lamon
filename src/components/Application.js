@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./navbar/Navbar";
-import Home from "./home/Home";
+import Home from "../pages/home/Home";
 import SignIn from "./../pages/authentication/SignIn";
 import SignUp from "./../pages/authentication/SignUp";
 import Products from "./../pages/products/Products";
