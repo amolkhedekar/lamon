@@ -13,9 +13,9 @@ function Home() {
       "value",
       (snapshot) => {
         snapshot.forEach((product) => {
-          let key = product.key;
           let data = product.val();
           allProducts.push({
+            uid: product.key,
             id: data.id,
             title: data.title,
             price: data.price,
@@ -45,6 +45,7 @@ function Home() {
       return (
         <Product
           key={index}
+          uid={item.uid}
           id={item.id}
           title={truncate(item.title, 90)}
           price={item.price}

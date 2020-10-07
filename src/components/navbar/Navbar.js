@@ -13,7 +13,7 @@ class Navbar extends Component {
     });
   };
   static contextType = StateContext;
-  
+
   render() {
     const [{ user }, dispatch] = this.context;
     const signout = () => {

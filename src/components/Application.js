@@ -10,6 +10,7 @@ import Cart from "../pages/cart/Cart";
 import SearchInput from "./searchInput/SearchInput";
 import { auth } from "./../services/firebase";
 import { useStateValue } from "./../stateProviders/StateProvider";
+import ProductDetails from "../pages/productDetails/ProductDetails";
 
 function Application() {
   const [{}, dispatch] = useStateValue();
@@ -36,6 +37,9 @@ function Application() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route path="/products/:key">
+            <ProductDetails />
           </Route>
           <Route path="/products">
             <Products />
