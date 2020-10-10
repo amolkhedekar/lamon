@@ -4,6 +4,7 @@ import "./Home.css";
 import productMethods from "../../database/products";
 import Loading from "../../components/loading/Loading";
 import { truncate } from "../../helpers/utils";
+import Loader from "../../components/loading/Loader";
 
 function Home() {
   const [products, setProducts] = useState(null);
@@ -37,7 +38,7 @@ function Home() {
 
   let productsToDisplay;
   if (products === null) {
-    productsToDisplay = <Loading />;
+    productsToDisplay = <Loader />;
   } else if (products.length === 0) {
     productsToDisplay = <h1>No Products found</h1>;
   } else {

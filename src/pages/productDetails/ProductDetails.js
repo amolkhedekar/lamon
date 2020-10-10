@@ -4,6 +4,7 @@ import "./ProductDetails.css";
 import Loading from "../../components/loading/Loading";
 import productMethods from "../../database/products";
 import ImageSlider from "../../components/imageSlider/ImageSlider";
+import Loader from "../../components/loading/Loader";
 
 function ProductDetails() {
   const { key } = useParams();
@@ -33,7 +34,7 @@ function ProductDetails() {
   }, []);
   let productDetailsToDisplay;
   if (productDetail === null) {
-    productDetailsToDisplay = <Loading />;
+    productDetailsToDisplay = "";
   } else if (productDetail === 0) {
     productDetailsToDisplay = <h1>No Product details found</h1>;
   } else {

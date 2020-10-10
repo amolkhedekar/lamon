@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Loader from "../loading/Loader";
 import Loading from "../loading/Loading";
 import "./ImageSlider.css";
 
@@ -8,7 +9,7 @@ function ImageSlider(props) {
   const images = props.slides;
   let imagesToDisplay;
   if (images == undefined) {
-    imagesToDisplay = <Loading />;
+    imagesToDisplay = "";
   } else {
     imagesToDisplay = (
       <div>

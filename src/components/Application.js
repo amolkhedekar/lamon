@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./navbar/Navbar";
 import Home from "../pages/home/Home";
 import SignIn from "./../pages/authentication/SignIn";
 import SignUp from "./../pages/authentication/SignUp";
@@ -11,6 +10,7 @@ import SearchInput from "./searchInput/SearchInput";
 import { auth } from "./../services/firebase";
 import { useStateValue } from "./../stateProviders/StateProvider";
 import ProductDetails from "../pages/productDetails/ProductDetails";
+import Nav from "./navbar/Nav";
 
 function Application() {
   const [{}, dispatch] = useStateValue();
@@ -33,7 +33,7 @@ function Application() {
   return (
     <Router>
       <div className="app">
-        <Navbar />
+        <Nav />
         <Switch>
           <Route exact path="/">
             <Home />
